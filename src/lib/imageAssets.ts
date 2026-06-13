@@ -17,8 +17,7 @@ export const gameImages = {
   // 調査演出
   pressureTest: "/images/pressure-test.jpg",
   failedDemolition: "https://d2xsxph8kpxj0f.cloudfront.net/310519663745228853/BabAf8SNGGTSZotMSbNyn2/case001-failed-demolition-jHagRY8uoNev8boUtQwQuC.webp",
-  causeIdentified: "https://d2xsxph8kpxj0f.cloudfront.net/310519663745228853/BabAf8SNGGTSZotMSbNyn2/case001-cause-identified-HLzxckLQXkS9vcJm5khzhe.webp",
-
+causeIdentified: "/images/cause-identified.jpg",
   // エンディング
  endingSuccess: "/images/ending-success.jpg",
 };
