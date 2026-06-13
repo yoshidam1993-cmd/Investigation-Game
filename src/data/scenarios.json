@@ -1,0 +1,154 @@
+{
+  "cases": [
+    {
+      "id": "case001",
+      "title": "天井からのSOS",
+      "description": "都内某マンション1階。天井から水が漏れている。原因を特定しよう。",
+      "opening": {
+        "title": "天井からのSOS",
+        "images": [
+          "mansionExterior",
+          "waterLeakRoom",
+          "worriedResident"
+        ],
+        "narrative": "管理会社🏢から連絡が入った。\n『天井から水が漏れています』\n漏水調査員として現場へ向かう。\n\n1階のお部屋の天井クロスが濡れ、水滴が落ちている。\n管理会社も住人も不安そうだ。\n\n原因を特定しよう🕵️"
+      },
+      "steps": [
+        {
+          "stepNumber": 1,
+          "title": "まず何をする？",
+          "image": "interviewScene",
+          "narrative": "現場に到着した。住人は不安そうに天井を指差している。管理会社の担当者も対応を待っている。",
+          "choices": [
+            {
+              "id": "step1_a",
+              "text": "住人に詳しく話を聞く",
+              "isCorrect": true,
+              "scoreChange": 10,
+              "resultNarrative": "住人への聞き取りで以下が分かった。\n\n• 3日前から漏れている\n• 雨でも晴れでも漏れる\n• 夜は量が増える気がする\n• 最近引っ越してきた",
+              "resultImage": "interviewScene",
+              "explanation": "調査は情報収集から。解体は最後の手段。ベテランほど最初にヒアリングを重視する。",
+              "memoItems": [
+                "3日前から漏れている",
+                "雨の日も晴れの日も漏れる",
+                "夜に漏水量が増える",
+                "最近引っ越してきた"
+              ]
+            },
+            {
+              "id": "step1_b",
+              "text": "床を解体する",
+              "isCorrect": false,
+              "scoreChange": -30,
+              "resultNarrative": "床を解体したが原因不明。住人と管理会社の表情が曇った。",
+              "resultImage": "failedDemolition",
+              "explanation": "情報がない状態での解体は時間もコストもかかる。住人も管理会社も困惑している。"
+            },
+            {
+              "id": "step1_c",
+              "text": "壁を解体する",
+              "isCorrect": false,
+              "scoreChange": -30,
+              "resultNarrative": "壁を解体したが原因は分からない。無駄な工事になってしまった。",
+              "resultImage": "failedDemolition",
+              "explanation": "漏水調査は壊して探す仕事ではない。状況把握が先。"
+            }
+          ]
+        },
+        {
+          "stepNumber": 2,
+          "title": "次に何をする？",
+          "image": "upstairsInterview",
+          "narrative": "得られた情報から上階の状況が気になる。上階住人に話を聞いてみよう。",
+          "choices": [
+            {
+              "id": "step2_a",
+              "text": "上階住人へ聞き取り",
+              "isCorrect": true,
+              "scoreChange": 10,
+              "resultNarrative": "上階住人に話を聞いた。\n\n• 最近浴室リフォームをした\n• 家族4人で居住、毎日入浴\n• 特に異常は感じていない",
+              "resultImage": "upstairsInterview",
+              "explanation": "上階の情報は重要な手掛かり。漏水原因との関連性を考える。",
+              "memoItems": [
+                "上階で浴室リフォーム実施",
+                "毎日入浴している",
+                "上階に異常なし"
+              ]
+            },
+            {
+              "id": "step2_b",
+              "text": "屋上防水を剥がす",
+              "isCorrect": false,
+              "scoreChange": -10,
+              "resultNarrative": "屋上を確認したが、雨でない日も漏れているため関連性は低い。",
+              "resultImage": "failedDemolition",
+              "explanation": "得られた情報と矛盾する。仮説と事実を照らし合わせよう。"
+            },
+            {
+              "id": "step2_c",
+              "text": "天井を全面解体する",
+              "isCorrect": false,
+              "scoreChange": -30,
+              "resultNarrative": "天井を解体したが原因は不明。大きな被害が出てしまった。",
+              "resultImage": "failedDemolition",
+              "explanation": "原因を絞り込まずに解体すると効率が悪い。"
+            }
+          ]
+        },
+        {
+          "stepNumber": 3,
+          "title": "次に何を疑う？",
+          "image": "pressureTest",
+          "narrative": "上階で浴室リフォームをしたという情報が気になる。給水設備を調査しよう。",
+          "choices": [
+            {
+              "id": "step3_a",
+              "text": "浴室周辺の給水設備",
+              "isCorrect": true,
+              "scoreChange": 10,
+              "resultNarrative": "浴室周辺を重点調査。圧力試験を実施し、給水配管で圧力低下を確認。原因箇所が絞り込まれた。",
+              "resultImage": "pressureTest",
+              "explanation": "専門機器を使うことで、目に見えない問題を特定できる。",
+              "memoItems": [
+                "給水配管から圧力低下を検出",
+                "原因箇所が上階浴室付近に特定"
+              ]
+            },
+            {
+              "id": "step3_b",
+              "text": "外壁クラック",
+              "isCorrect": false,
+              "scoreChange": -10,
+              "resultNarrative": "外壁を確認したが異常なし。",
+              "resultImage": "failedDemolition",
+              "explanation": "現時点では根拠が不足している。"
+            },
+            {
+              "id": "step3_c",
+              "text": "屋上防水",
+              "isCorrect": false,
+              "scoreChange": -10,
+              "resultNarrative": "屋上防水に異常なし。",
+              "resultImage": "failedDemolition",
+              "explanation": "雨天との関連性が見られない。"
+            }
+          ]
+        }
+      ],
+      "ending": {
+        "title": "原因特定成功！",
+        "image": "causeIdentified",
+        "narrative": "浴室リフォーム時の給水管継手から漏水していたことが判明した。",
+        "successImage": "endingSuccess",
+        "successNarrative": "👤 お客様『不安だったので、原因が分かって安心しました。ありがとうございました！』\n\n🏢 管理会社『解体せずここまで特定できるとは。報告も分かりやすく助かります。』\n\n👮 先輩調査員『いい調査だったな。漏水調査は壊す仕事じゃない。情報を集め、原因を絞り込む仕事だ。』",
+        "jobAttraction": [
+          "🔍 毎回違う原因を追う\n現場の探偵のような仕事",
+          "🛠️ 専門機器を使い\n目に見えない漏水を特定",
+          "🤝 困っている人から\n直接感謝される仕事",
+          "📈 経験がそのまま武器になる\n専門職",
+          "🌱 未経験からでも\n技術を身につけられる"
+        ]
+      }
+    }
+  ]
+}
