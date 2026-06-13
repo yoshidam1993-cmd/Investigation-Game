@@ -96,7 +96,7 @@ export function GameScreen({
           <div className="mb-6">
             <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-2xl">
               <img
-                src={getImageUrl(gameCase.ending.successImage as any)}
+              src={getImageUrl((["S","A","B","C"].includes(ranking.rank) ? gameCase.ending.successImage : gameCase.ending.image) as any)}
                 alt="Success"
                 className="w-full h-full object-cover"
               />
@@ -123,9 +123,13 @@ export function GameScreen({
             <Card className="bg-gradient-to-br from-amber-900 to-slate-700 border-amber-400 border-2 p-5 flex flex-col justify-between">
               <div>
                 <h3 className="text-lg font-bold text-amber-300 mb-3">🎯 あなたの適性</h3>
-                <p className="text-sm text-gray-100 mb-4">
-                  原因特定できたあなたは専門調査の適性があります。
-                </p>
+                
+                  <p className="text-sm text-gray-100 mb-4">
+                {["S","A","B","C"].includes(ranking.rank)
+                  ? "原因特定できたあなたは専門調査の適性があります。"
+                  : "今回は正解にたどり着けませんでしたが、漏水調査は経験を積むことで身につく仕事です。先輩と一緒に学べる環境があります。"}
+              </p>
+             
               </div>
               <a
                 href={JOB_LP_URL}
